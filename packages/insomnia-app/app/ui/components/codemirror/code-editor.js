@@ -87,6 +87,7 @@ const BASE_CODEMIRROR_OPTIONS = {
 @autoBindMethodsForReact(AUTOBIND_CFG)
 class CodeEditor extends React.Component {
   constructor(props) {
+    console.log('[CODE EDITOR] constructor');
     super(props);
 
     this.state = {
@@ -99,7 +100,9 @@ class CodeEditor extends React.Component {
   }
 
   componentWillUnmount() {
+    console.log('[CODE EDITOR] componentWillUnmount');
     if (this.codeMirror) {
+      console.log('[CODE EDITOR] did componentWillUnmount');
       this.codeMirror.toTextArea();
       this.codeMirror.closeHintDropdown();
     }
@@ -107,6 +110,7 @@ class CodeEditor extends React.Component {
 
   // eslint-disable-next-line camelcase
   UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log('[CODE EDITOR] UNSAFE_componentWillReceiveProps');
     this._uniquenessKey = nextProps.uniquenessKey;
     this._previousUniquenessKey = this.props.uniquenessKey;
 
@@ -115,15 +119,18 @@ class CodeEditor extends React.Component {
   }
 
   componentDidUpdate() {
+    console.log('[CODE EDITOR] componentDidUpdate');
     this._codemirrorSetOptions();
     const { defaultValue } = this.props;
     if (this._uniquenessKey && this._uniquenessKey !== this._previousUniquenessKey) {
+      console.log('[CODE EDITOR] did componentDidUpdate');
       this._codemirrorSetValue(defaultValue);
       this._restoreState();
     }
   }
 
   shouldComponentUpdate(nextProps) {
+    console.log('[CODE EDITOR] shouldComponentUpdate');
     // Update if any properties changed, except value. We ignore value.
     for (const key of Object.keys(nextProps)) {
       if (key === 'defaultValue') {
@@ -153,7 +160,9 @@ class CodeEditor extends React.Component {
   }
 
   refresh() {
+    console.log('[CODE EDITOR] refresh');
     if (this.codeMirror) {
+      console.log('[CODE EDITOR] did refresh');
       this.codeMirror.refresh();
     }
   }
@@ -937,6 +946,7 @@ class CodeEditor extends React.Component {
   }
 
   render() {
+    console.log('[CODE EDITOR] render');
     const {
       id,
       readOnly,

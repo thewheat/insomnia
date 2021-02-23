@@ -499,13 +499,15 @@ class Wrapper extends React.PureComponent<WrapperProps, State> {
   }
 
   _forceRequestPaneRefreshAfterDelay(): void {
+    console.log('[WRAPPER] _forceRequestPaneRefreshAfterDelay');
     // Give it a second for the app to render first. If we don't wait, it will refresh
     // on the old request and won't catch the newest one.
     // TODO: Move this refresh key into redux store so we don't need timeout
-    window.setTimeout(this._forceRequestPaneRefresh, 100);
+    window.setTimeout(this._forceRequestPaneRefresh, 1000);
   }
 
   _forceRequestPaneRefresh(): void {
+    console.log('[WRAPPER] _forceRequestPaneRefresh');
     this.setState({ forceRefreshKey: Date.now() });
   }
 
@@ -514,11 +516,13 @@ class Wrapper extends React.PureComponent<WrapperProps, State> {
   }
 
   componentDidMount() {
+    console.log('[WRAPPER] componentDidMount');
     const { activity } = this.props;
     trackPageView(`/${activity || ''}`);
   }
 
   componentDidUpdate(prevProps: Props) {
+    console.log('[WRAPPER] componentDidUpdate');
     // We're using activities as page views so here we monitor
     // for a change in activity and send it as a pageview.
     const { activity } = this.props;
@@ -528,6 +532,7 @@ class Wrapper extends React.PureComponent<WrapperProps, State> {
   }
 
   render() {
+    console.log('[WRAPPER] render');
     const {
       activeCookieJar,
       activeEnvironment,

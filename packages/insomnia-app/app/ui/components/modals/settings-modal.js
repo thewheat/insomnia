@@ -74,8 +74,11 @@ class SettingsModal extends PureComponent {
   }
 
   async _handleUpdateKeyBindings(hotKeyRegistry) {
-    models.settings.update(this.props.settings, { hotKeyRegistry });
+    console.log('[SETTINGS MODAL] _handleUpdateKeyBindings');
+    await models.settings.update(this.props.settings, { hotKeyRegistry });
+    console.log('[SETTINGS MODAL] awaited');
     this.props.handleUpdateKeyBindings();
+    console.log('[SETTINGS MODAL] done');
   }
 
   show(currentTabIndex = 0) {
