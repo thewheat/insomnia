@@ -347,6 +347,7 @@ class WrapperDebug extends React.PureComponent<Props> {
   }
 
   render() {
+    console.log('[WRAPPER DEBUG] render()');
     return (
       <PageLayout
         wrapperProps={this.props.wrapperProps}

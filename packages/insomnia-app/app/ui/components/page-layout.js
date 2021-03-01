@@ -31,6 +31,7 @@ class PageLayout extends React.PureComponent<Props, State> {
   }
 
   render() {
+    console.log('[PAGE LAYOUT] render()');
     const {
       renderPaneOne,
       renderPaneTwo,
