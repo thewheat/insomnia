@@ -289,6 +289,7 @@ class OneLineEditor extends PureComponent {
   }
 
   render() {
+    console.log('[ONE LINE EDITOR] render()');
     const {
       id,
       defaultValue,

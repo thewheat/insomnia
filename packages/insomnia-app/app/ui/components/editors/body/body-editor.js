@@ -113,6 +113,7 @@ class BodyEditor extends React.PureComponent<Props> {
   }
 
   render() {
+    console.log('[BODY EDITOR] render()');
     const {
       request,
       workspace,

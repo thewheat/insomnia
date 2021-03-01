@@ -144,6 +144,7 @@ class RequestPane extends React.PureComponent<Props> {
   }
 
   render() {
+    console.log('[REQUESTPANE] render()');
     const {
       forceRefreshCounter,
       forceUpdateRequestHeaders,

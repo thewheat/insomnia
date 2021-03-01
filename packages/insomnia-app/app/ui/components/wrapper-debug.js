@@ -85,6 +85,7 @@ class WrapperDebug extends React.PureComponent<Props> {
   }
 
   render() {
+    console.log('[WRAPPER DEBUG] render()');
     const {
       forceRefreshKey,
       handleChangeEnvironment,

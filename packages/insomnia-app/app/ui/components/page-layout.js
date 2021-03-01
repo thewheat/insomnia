@@ -29,6 +29,7 @@ class PageLayout extends React.PureComponent<Props, State> {
   }
 
   render() {
+    console.log('[PAGELAYOUT] render()');
     const { renderPageBody, renderPageHeader, renderPageSidebar, wrapperProps } = this.props;
 
     const {

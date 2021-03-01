@@ -331,6 +331,7 @@ class RequestUrlBar extends React.PureComponent<Props, State> {
   }
 
   render() {
+    console.log('[REQUEST URL BAR] render()');
     const {
       request,
       handleRender,

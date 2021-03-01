@@ -920,6 +920,7 @@ class CodeEditor extends React.Component {
   }
 
   render() {
+    console.log('[CODE DITOR] render()');
     const {
       id,
       readOnly,
